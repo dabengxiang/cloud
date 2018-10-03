@@ -1,0 +1,18 @@
+server:
+  port: 6062
+spring:
+  application:
+    name: product
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/boot-sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
