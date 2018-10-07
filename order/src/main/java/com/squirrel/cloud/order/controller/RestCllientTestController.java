@@ -1,10 +1,12 @@
 package com.squirrel.cloud.order.controller;
 
+import com.squirrel.cloud.order.properties.OrderProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,10 @@ public class RestCllientTestController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private OrderProperties orderProperties;
+
+
 
     @GetMapping("/productMsg")
     public Object getProductMsg(){
@@ -51,4 +57,11 @@ public class RestCllientTestController {
 
         return forObject;
     }
+
+    @GetMapping("/msg")
+    public String orderPropertiesMsg(){
+        return orderProperties.getName()+"--"+orderProperties.getPrice();
+    }
+
+
 }

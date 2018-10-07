@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: mq-product
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/boot-sell?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+server:
+  port: 5050
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.squirrel.cloud.mqcustomer.entity
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  mappers: com.squirrel.cloud.mqcustomer.utils.MyMapper
+  identity: mysql
+  not-empty: false
+
+
+
+
