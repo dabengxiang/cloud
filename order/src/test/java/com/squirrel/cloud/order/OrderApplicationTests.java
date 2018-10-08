@@ -13,4 +13,25 @@ public class OrderApplicationTests {
 	public void contextLoads() {
 	}
 
+
+	@Test
+	public void getSum(){
+		System.out.println(getN(5));
+	}
+
+
+	//0.1.1.2.3.5.8.13.21.55
+	public int getN(int n){
+
+		if(n == 1)
+			return 0 ;
+
+		if(n == 2)
+			return 1;
+
+		return getN(n-1) + getN(n-2);
+
+	}
+
+
 }

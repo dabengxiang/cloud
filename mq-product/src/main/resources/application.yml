@@ -14,23 +14,18 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
     default-property-inclusion: non_null
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
 
 
 
 server:
-  port: 5050
+  port: 5051
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.squirrel.cloud.mqcustomer.entity
   configuration:
     map-underscore-to-camel-case: true
 mapper:
-  mappers: com.squirrel.cloud.mqcustomer.utils.MyMapper
+  mappers: com.squirrel.cloud.mqproduct.utils.MyMapper
   identity: mysql
   not-empty: false
 logging:
